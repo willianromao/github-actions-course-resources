@@ -5,13 +5,16 @@ on:
       accounts:
         required: true
         type: string
+      regions:
+        required: true
+        type: string
 jobs:
   build:
     continue-on-error: true
     strategy:
       matrix:
         accounts: ["${{ inputs.accounts }}"]
-        regions: [us-east-1, us-east-2]
+        regions: ["${{ inputs.regions }}"]
     runs-on: ubuntu-latest
     steps:
       - name: Get Accounts
