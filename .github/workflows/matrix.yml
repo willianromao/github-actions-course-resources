@@ -1,8 +1,8 @@
 name: Matrix Demo
-on: push
+on: [push,workflow_dispatch]
 jobs:
   deploy:
     uses: ./.github/workflows/reusable.yml
     with:
       accounts: ${{vars.ACCOUNT_ALL}}
-      regions: ${{vars.REGIONS}} 
+      regions: ${{vars.REGIONS}}
