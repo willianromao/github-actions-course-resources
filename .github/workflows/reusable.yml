@@ -1,0 +1,26 @@
+name: Reusable Deploy
+on: 
+  workflow_call:
+    inputs:
+      accounts:
+        required: true
+        type: string
+      environment:
+        required: true
+        type: string
+jobs:
+  build:
+    environment: ${{ inputs.environment }}
+    continue-on-error: true
+    strategy:
+      matrix:
+        accounts: ${{ inputs.accounts }}
+        regions: [us-east-1, us-east-2]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Accounts
+        run: |
+          echo "Accounts: ${{ matrix.accounts }}"
+      - name: Get Regions
+        run: |
+          echo "Regions: ${{ matrix.regions }}"

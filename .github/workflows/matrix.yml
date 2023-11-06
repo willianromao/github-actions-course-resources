@@ -1,18 +1,8 @@
 name: Matrix Demo
 on: push
 jobs:
-  build:
-    environment: main
-    continue-on-error: true
-    strategy:
-      matrix:
-        accounts: ${{ vars.ACCOUNTS }}
-        regions: [us-east-1, us-east-2]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get Accounts
-        run: |
-          echo "Accounts: ${{ matrix.accounts }}"
-      - name: Get Regions
-        run: |
-          echo "Regions: ${{ matrix.regions }}"
+  deploy:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      accounts: ${{ vars.ACCOUNTS}}
+      environment: main
