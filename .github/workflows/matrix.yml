@@ -5,13 +5,13 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        accounts: [12, 14, 16]
+        accounts: [706254754056]
         regions: [us-east-1, us-east-2]
     runs-on: ubuntu-latest
     steps:
       - name: Get Accounts
         run: |
-          echo "Accounts: {{ matrix.accounts }}"
+          echo "Accounts: ${{ matrix.accounts }}"
       - name: Get Regions
         run: |
-          echo "Regions: {{ matrix.regions }}"
+          echo "Regions: ${{ matrix.regions }}"
