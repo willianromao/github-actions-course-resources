@@ -2,7 +2,8 @@ name: Matrix Demo
 on: push
 jobs:
   deploy:
+    environment: main
     uses: ./.github/workflows/reusable.yml
     with:
-      accounts: ${{ vars.ACCOUNTS}}
+      accounts: ${{ vars.ACCOUNTS }}
       environment: main
