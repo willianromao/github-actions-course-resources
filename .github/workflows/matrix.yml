@@ -6,7 +6,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        accounts: [${{ vars.ACCOUNTS }}]
+        accounts: ${{ vars.ACCOUNTS }}
         regions: [us-east-1, us-east-2]
     runs-on: ubuntu-latest
     steps:
