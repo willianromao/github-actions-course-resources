@@ -7,8 +7,8 @@ jobs:
       - name: Get Accounts
         run: |
           echo "Accounts: $ACCOUNT_ALL
-  deploy:
-    uses: ./.github/workflows/reusable.yml
-    with:
-      accounts: $ACCOUNT_ALL
-      environment: main
+  #deploy:
+  #  uses: ./.github/workflows/reusable.yml
+  #  with:
+  #    accounts: $ACCOUNT_ALL
+  #    environment: main
