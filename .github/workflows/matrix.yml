@@ -5,4 +5,4 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       accounts: ${{vars.ACCOUNT_ALL}}
-      regions: ${{vars.REGIONS}}
+      regions: ${{fromJSON(vars.REGIONS)}}
