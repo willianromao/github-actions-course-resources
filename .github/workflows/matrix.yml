@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Get Accounts
         run: |
-          echo "Accounts: ${{var.ACCOUNT_ALL}}"
+          echo "Accounts: ${{vars.ACCOUNT_ALL}}"
   #deploy:
   #  uses: ./.github/workflows/reusable.yml
   #  with:
