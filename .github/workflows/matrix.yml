@@ -1,8 +1,14 @@
 name: Matrix Demo
 on: push
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Accounts
+        run: |
+          echo "Accounts: $ACCOUNT_ALL
   deploy:
     uses: ./.github/workflows/reusable.yml
     with:
-      accounts: ${{ env.ACCOUNT_ALL }}
+      accounts: $ACCOUNT_ALL
       environment: main
